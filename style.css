@@ -40,7 +40,7 @@ li {
     gap: 2.125rem;
 }
 
-#logo h1{
+#logo h1 {
     color: rgb(196, 0, 0);
     font-size: 2.5rem;
 }
@@ -49,7 +49,7 @@ li {
     width: 83%;
 }
 
-#hero{
+#hero {
     background-image: url("Imagens/Hero.jpeg.jpg");
     background-position: center;
     color: #f0f0fa;
@@ -62,7 +62,7 @@ li {
     padding: 10rem 0;
 }
 
-#hero-content h2{
+#hero-content h2 {
     font-size: 4rem;
     font-weight: 500;
     line-height: 1.05;
@@ -81,15 +81,15 @@ li {
     margin: 5rem auto;
 }
 
-#articles{
+#articles {
     flex: 3
 }
 
-#sidebar{
+#sidebar {
     flex: 1;
 }
 
-#articles-items{
+#articles-items {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -104,36 +104,36 @@ li {
     background-color: #f9f9f9;
 }
 
-.articles-card img{
+.articles-card img {
     width: 100%;
     height: 220px;
     object-fit: cover;
     display: block;
 }
 
-.articles-title{
+.articles-title {
     margin: 0 auto;
     max-width: 60%;
     text-align: center;
 }
 
-.articles-title h2{
+.articles-title h2 {
     font-size: 2rem;
     font-weight: 400;
     margin-bottom: 0.5rem;
 }
 
-.articles-content{
-    margin: 1rem 1rem 2rem 1rem ;
+.articles-content {
+    margin: 1rem 1rem 2rem 1rem;
 }
 
-.articles-header{
+.articles-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.articles-header h3{
+.articles-header h3 {
     font-weight: 400;
     font-size: 1.5rem;
 }
@@ -149,4 +149,58 @@ li {
 .see-more-button {
     font-size: 1.125rem;
     color: #333;
+}
+
+.sidebar-card {
+    box-shadow: 5px 5px 5px #ccc;
+    background-color: #f0f0fa;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sidebar-title {
+    margin: 0 auto;
+    max-width: 60%;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.video{
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    max-height: 200px;
+}
+
+.video iframe{
+    width: 100%;
+    aspect-ratio: 16/9;
+    height: auto;
+}
+
+input{
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: #666;
+    border: #666 solid 1px;
+}
+
+#feedback-btn,
+#newsletter-btn{
+    background-color: #333;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    color: #fcfcfc;
+    border: 0;
+    cursor: pointer;
+}
+
+.form-btn:hover,
+#newsletter-btn:hover {
+    background-color: #666;
+    border: 0;
 }
