@@ -78,11 +78,17 @@ li {
 #main-content {
     display: flex;
     gap: 4rem;
-    margin: 5rem auto;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(Imagens/Background-3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #articles {
-    flex: 3
+    margin-left: 7%;
+    flex: 3;
+    margin-bottom: 3rem;
 }
 
 #sidebar {
@@ -100,8 +106,16 @@ li {
     flex-grow: 1;
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 5px 5px 5px #ccc;
+    border-bottom: 4px solid #8B0000;
     background-color: #f9f9f9;
+    transition: transform 0.3s ease;
+}
+
+
+
+.articles-card:hover {
+    transform: translateY(-10px);
+    /* Leve subida no hover */
 }
 
 .articles-card img {
@@ -112,7 +126,8 @@ li {
 }
 
 .articles-title {
-    margin: 0 auto;
+    margin: 2rem auto;
+    color: #fdfdfd;
     max-width: 60%;
     text-align: center;
 }
@@ -152,23 +167,30 @@ li {
 }
 
 .sidebar-card {
-    box-shadow: 5px 5px 5px #ccc;
+    border-bottom: 4px solid #8B0000;
     background-color: #f0f0fa;
     border-radius: 1rem;
     padding: 1rem;
     margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-card:hover {
+    transform: translateY(-10px);
+    /* Leve subida no hover */
 }
 
 .sidebar-title {
-    margin: 0 auto;
+    margin: 2.6rem auto;
+    color: #fdfdfd;
     max-width: 60%;
     text-align: center;
     font-weight: 400;
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
-.video{
+.video {
     border-radius: 1rem;
     overflow: hidden;
     width: 100%;
@@ -176,13 +198,13 @@ li {
     max-height: 200px;
 }
 
-.video iframe{
+.video iframe {
     width: 100%;
     aspect-ratio: 16/9;
     height: auto;
 }
 
-input{
+input {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     color: #666;
@@ -190,17 +212,243 @@ input{
 }
 
 #feedback-btn,
-#newsletter-btn{
-    background-color: #333;
+#newsletter-btn {
+    position: relative;
+    background-color: #A00B0B;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
-    color: #fcfcfc;
     border: 0;
+    color: #fcfcfc;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.4s ease;
+    z-index: 1;
+}
+
+#feedback-btn::before,
+#newsletter-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #800909;
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+#feedback-btn:hover::before,
+#newsletter-btn:hover::before {
+    left: 0;
+}
+
+#testimonials {
+    padding: 80px 40px;
+    background-color: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centraliza o conteúdo horizontalmente */
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url(Imagens/Backgroud-2.jpeg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section-tittle h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.section-tittle {
+    color: #f0f0fa;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 60%;
+}
+
+#testimonials-box {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.testimonials-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Sombra suave */
+    position: relative;
+    transition: transform 0.3s ease;
+    border-bottom: 4px solid #8B0000;
+}
+
+.testimonials-card:hover {
+    transform: translateY(-10px);
+    /* Leve subida no hover */
+}
+
+.quote-icon {
+    font-size: 60px;
+    color: #ff0000;
+    opacity: 0.1;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.testimonials-text {
+    font-style: italic;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.testimonials-identification {
+    display: flex;
+    flex-direction: column;
+    /* Faz com que o nome e a data fiquem um sobre o outro */
+    align-items: center;
+    /* Centraliza os dois elementos horizontalmente */
+    margin-top: 15px;
+}
+
+.testimonials-identification span {
+    font-size: 13px;
+    color: #999;
+}
+
+/* Container para alinhar input e botão de feedback */
+.feedback-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    /* Espaço antes da newsletter */
+}
+
+#text-feedback {
+    width: 400px;
+    /* Input mais largo para o feedback */
+    max-width: 90%;
+    padding: 1rem;
+}
+
+#newsletter-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Garante que o input da newsletter tenha um tamanho fixo legal */
+#email-newsletter {
+    width: 300px;
+    padding: 0.75rem;
+}
+
+/* Responsividade para celular: empilha os itens */
+@media (max-width: 600px) {
+    #newsletter-box {
+        flex-direction: column;
+    }
+
+    #text-feedback,
+    #email-newsletter {
+        width: 100%;
+    }
+}
+
+/* Container dos formulários para centralização total */
+#feedback-box,
+#newsletter-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Ajuste específico para o formulário de Newsletter ficar lado a lado */
+#newsletter-box {
+    align-items: center;
+    gap: 1rem;
+    /* Espaço entre o campo de e-mail e o botão */
+}
+
+/* Estilização refinada dos campos de texto */
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    max-width: 450px;
+    /* Limita a largura para não esticar demais */
+    padding: 0.8rem 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #A00B0B;
+    /* Cor de destaque ao clicar no campo */
+}
+
+/* Espaçamento extra entre as seções de Feedback e Newsletter */
+#feedback {
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    background-color: #1a1a1a;
+    /* Fundo escuro para combinar com o tema */
+    color: white;
+    padding: 3rem 0 1rem 0;
+}
+
+#main-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* Para quebrar linha no celular */
+    gap: 2rem;
+}
+
+#footer-about,
+#footer-links,
+#footer-contact {
+    flex: 1;
+    min-width: 250px;
+}
+
+#footer-menu ul {
+    padding: 0;
+}
+
+#footer-menu li {
+    margin-bottom: 0.5rem;
     cursor: pointer;
 }
 
-.form-btn:hover,
-#newsletter-btn:hover {
-    background-color: #666;
-    border: 0;
+#about-social-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+#copyrights {
+    text-align: center;
+    margin-top: 2rem;
+    border-top: 1px solid #333;
+    padding-top: 1rem;
 }
